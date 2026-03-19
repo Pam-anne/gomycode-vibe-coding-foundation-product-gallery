@@ -1,0 +1,133 @@
+/* RESET STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* THEME VARIABLES */
+:root {
+  --bg: #f5f5f5;
+  --text: #111;
+  --card: #ffffff;
+  --accent: #4f46e5;
+}
+
+/* DARK MODE */
+body.dark {
+  --bg: #111;
+  --text: #f5f5f5;
+  --card: #1e1e1e;
+}
+
+/* BASE STYLES */
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* BUTTON */
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 8px;
+  background: var(--accent);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* Click (active) effect */
+button:active {
+  transform: scale(0.95);
+}
+
+/* Dark mode button color */
+body.dark button {
+  background: #22c55e; /* green in dark mode */
+}
+
+/* GALLERY GRID */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+/* CARD */
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(20px);
+  opacity: 0;
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease;
+}
+
+/* SHOW ANIMATION */
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* IMAGE */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* CARD CONTENT */
+.card-content {
+  padding: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
